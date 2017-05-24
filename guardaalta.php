@@ -4,7 +4,7 @@
 
 	$u= GetSQLValueString($_POST["txtUsuario"],"text");
 	$n= GetSQLValueString($_POST["txtNombre"], "text");
-	$c= GetSQLValueString($_POST["txtClave"]), "text");
+	$c= GetSQLValueString(md5($_POST["txtClave"]), "text");
 	$d= GetSQLValueString($_POST["txtDepto"], "int");
 	$v= GetSQLValueString($_POST["txtVigencia"], "int");
 
