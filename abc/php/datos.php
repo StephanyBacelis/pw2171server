@@ -25,6 +25,11 @@
     print(json_encode($salidaJSON));
   }
 
+  function hola()
+  {
+    print('hola');
+  }
+
   //Menu principal
   $opcion=$_GET["opcion"];
 
@@ -32,11 +37,16 @@
     case 'valida':
       valida();
       break;
-
+    case 'hola':
+      hola();
+      break;
     default:
       # code...
       break;
   }
 
+
+/*  $id = $_POST['id'];
+  print('asdasd'.$id);*/
   //http://localhost/pw2171server/abc/php/datos.php?opcion=valida&usuario=asd&clave=213
 ?>
