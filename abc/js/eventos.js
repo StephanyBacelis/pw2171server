@@ -29,11 +29,18 @@ var iniciaApp = function() {
 
     //Funcion done es el sustituo de success.
     validaEntrada.done(function(data) {
-      console.log(data.respuesta);
+      //console.log(data.respuesta);
+      if(data.respuesta==true){
+        $('#datosUsuario').hide();
+        //etiqueta
+        $('nav').show('slow');
+      }else{
+        alert('Usuario no válido');
+      }
     });
 
     validaEntrada.fail(function(jqError, textStatus) {
-      console.log('Solicitud fallida: '+textStatus);
+      alert('Solicitud fallida: '+textStatus);
     })
   };
 
