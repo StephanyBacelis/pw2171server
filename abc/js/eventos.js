@@ -1,21 +1,40 @@
+//q -> parametro para poner la ciudad
+/*
+http://api.openweathermap.org/data/2.5/weather?q=mexico&APPID=4c161114a189a1dab2b3a32e427a4d63
+
+  en input poner la ciudad
+  poner todos los datos del clima en json
+  si dice lluvia ps una imagen de lluvia etc
+*/
+
 //cd /Applications/XAMPP/xamppfiles/htdocs/pw2171server
 var iniciaApp = function() {
-  //console.log("Hola App");
-  $('#menu').hide();
+
   var entrar= function() {
 
-    $.ajax({
-      url: "php/datos.php",
-      type: "GET",
-      data: "opcion=hola",
-      success: function(msg){
-        console.log(msg);
-      }
+    var usuario = $('#txtUsuario').val();
+    var clave = $('#txtClave').val();
+
+    var parametros = "opcion=valida"+
+                      "&usuario="+usuario+
+                      "&clave="+clave+
+                      "&id="+Math.random(); //para engañar la cache de la pc
+
+    var validaEntrada = $.ajax({
+        method: 'POST',
+        url: 'php/datos.php',
+        data: parametros,
+        dataType: 'json' //Que tipo de datos vamos a recibir
+      });
+
+    //Funcion done es el sustituo de success.
+    validaEntrada.done(function(data) {
+      console.log(data.respuesta);
     });
 
-    console.log($('#txtUsuario').val());
-    console.log($('#txtClave').val());
-    $('#menu').show();
+    validaEntrada.fail(function(jqError, textStatus) {
+      console.log('Solicitud fallida: '+textStatus);
+    })
   };
 
   var teclaUsuario= function(tecla) {
