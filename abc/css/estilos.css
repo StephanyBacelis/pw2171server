@@ -1,27 +1,33 @@
 body{
-  font-size: 16px;
-  margin: 0 auto;
-  max-width: 1024px;
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px;
 }
-
 header nav{
-  display: none;
-  text-align: center;
+	display: none;
+	text-align: center;
 }
-
 header nav ul li{
-  display: inline-block;
+	display: inline-block;
 }
-
 header nav ul li button{
-  width: 89px;
+	width: 89px;
 }
-
 #secUsuarios{
-  display: none;
+	display: none;
+}
+#datosUsuario,#secUsuarios{
+	margin: 0 auto;
+	width: 350px;
 }
 
-#datosUsuario, #secUsuarios{
-  width: 350px;
-  margin: 0 auto;
-}
+
+
+
+
+
+
+
+
+
+
